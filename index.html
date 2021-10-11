@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="object detector">
+    <title>Object Detector</title>
+    <!-- Include css files. -->
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/fa.min.css">
+</head>
+
+<body>
+    <div class="container w-full mx-auto max-w-8/12 md:px-4 mb-2">
+        <!-- Header. -->
+        <center>
+            <h1 class="font-bold display-1 underline">
+                Object Detector
+            </h1>
+            <h4 class="text-subtitle mb-6">A simple object detector trained on a very small dataset.</h4>
+        </center>
+    </div>
+    <div id="view_id" class="mb-6 mx-auto max-w-xl">
+        <!-- Loading. -->
+        <center>
+            <i class="fad fa-spinner-third text-primary fa-3x fa-spin"></i>
+            <h3 class="font-bold">Loading Model..</h3>
+        </center>
+    </div>
+    <!-- Footer. -->
+    <div class="mb-2 card text-center p-2 mx-auto max-w-xl">
+        <h4 class="text-subtitle"><a href="https://github.com/lovesaroha/Object-Detector"
+                target="_blank">LoveSaroha/Object-Detector</a></h4>
+        <h3 class="text-subtitle font-bold mb-0 hover:underline cursor-pointer"
+            onclick="javascript: window.location = 'https://lovesaroha.com';">Love Saroha</h3>
+        <h4 class="text-gray">lovesaroha1994@gmail.com</h4>
+    </div>
+    <!-- Include script.js file -->
+    <script type="text/javascript" src="./assets/tf.min.js"></script>
+    <script type="text/javascript" src="./assets/script.js"></script>
+</body>
+
+</html>
+
+<!-- Home page template. -->
+<template id="homePage_id">
+    <div class="bg-light mx-auto max-w-xl mb-2 p-2 text-center">
+        <h4 class="text-gray mb-0">Upload image and click on predict to get result.</h4>
+    </div>
+    <div class="bg-primary mx-auto max-w-md text-center" id="result_id"></div>
+    <center>
+        <!-- Canvas.  -->
+        <canvas id="myCanvas" style="background: url('assets/background.png');" height="512" width="512"
+            class="hide-on-md shadow-xl mb-2"></canvas>
+    </center>
+    <center>
+        <label class="bg-primary text-white p-2 px-4 cursor-pointer mb-4">
+            Browse Images <input class="hidden" oninput="javascript: setBackgroundImage(this);" type="file"
+                name="image">
+        </label><br><br>
+        <button id="predict_id" class="hidden" onclick="javascript: predict(this);">Predict</button>
+    </center>
+</template>
